@@ -29,11 +29,9 @@ public class Test_Calculator {
         assertEquals(6, calculator.Add("1\n2,3"));
     }
 
-
-
-
-
-
-
-
+    @Test
+    public void testCustomDelimiter() {
+        assertEquals(3, calculator.Add("//;\n1;2"));
+    }
+    
 }
