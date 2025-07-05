@@ -24,6 +24,10 @@ public class Test_Calculator {
         assertEquals(10, calculator.Add("1,2,3,4"));
     }
 
+    @Test
+    public void testNewlineAsDelimiter() {
+        assertEquals(6, calculator.Add("1\n2,3"));
+    }
 
 
 
