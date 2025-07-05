@@ -55,4 +55,11 @@ public class Test_Calculator {
     }
 
 
+    @Test
+    public void testCallCount() {
+        calculator.Add("1,2");
+        calculator.Add("3,4");
+        assertEquals(2, calculator.GetCalledCount());
+    }
+
 }

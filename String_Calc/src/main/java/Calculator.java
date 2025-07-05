@@ -4,10 +4,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Calculator {
+    private int callCount = 0;
+
     public int Add(String str) {
+        callCount++;
         if (str == null || str.isEmpty()) {
             return 0;
         }
+
 
         String delimiter = ",|\n";
         if (str.startsWith("//")) {
@@ -48,4 +52,7 @@ public class Calculator {
         return sum;
     }
 
+    public int GetCalledCount() {
+        return callCount;
+    }
 }
