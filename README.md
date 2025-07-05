@@ -13,5 +13,11 @@ This project is a Java implementation of the [String Calculator Kata], built usi
 - Throws exception for negative numbers with message containing all negatives
 - Tracks number of times `Add()` is called
 
+## ✨ ScreenShots
+
+![Passed TestCase](screenshots/pass_case.png)
+
+![Failed TestCase](screenshots/fail_case.png)
+
 
 
