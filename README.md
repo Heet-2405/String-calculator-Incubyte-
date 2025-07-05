@@ -16,6 +16,7 @@ This project is a Java implementation of the [String Calculator Kata], built usi
 ## ✨ ScreenShots
 
 ![Passed TestCase](screenshots/pass_case.png)
+
 ![Failed TestCase](screenshots/fail_case.png)
 
 
