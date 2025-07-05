@@ -3,7 +3,12 @@ public class Calculator {
         if (str == null || str.isEmpty()) {
             return 0;
         }
-        return Integer.parseInt(str);
+        String[] numbers = str.split(",");
+        int sum = 0;
+        for (String num : numbers) {
+            sum += Integer.parseInt(num.trim());
+        }
+        return sum;
     }
 
 }
