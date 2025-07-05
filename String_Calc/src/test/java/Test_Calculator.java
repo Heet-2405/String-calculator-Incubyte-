@@ -49,5 +49,10 @@ public class Test_Calculator {
         assertEquals(2, calculator.Add("2,1001"));
     }
 
+    @Test
+    public void testMultiCharDelimiter() {
+        assertEquals(6, calculator.Add("//[***]\n1***2***3"));
+    }
+
 
 }

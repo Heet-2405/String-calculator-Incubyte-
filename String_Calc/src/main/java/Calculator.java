@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Calculator {
@@ -12,9 +13,19 @@ public class Calculator {
         if (str.startsWith("//")) {
             int index = str.indexOf("\n");
             String custom = str.substring(2, index);
-            delimiter = Pattern.quote(custom);
             str = str.substring(index + 1);
+            if (custom.startsWith("[")) {
+                Matcher m = Pattern.compile("\\[(.*?)]").matcher(custom);
+                List<String> delims = new ArrayList<>();
+                while (m.find()) {
+                    delims.add(Pattern.quote(m.group(1)));
+                }
+                delimiter = String.join("|", delims);
+            } else {
+                delimiter = Pattern.quote(custom);
+            }
         }
+
 
         int sum = 0;
         String[] numbers = str.split(delimiter);
