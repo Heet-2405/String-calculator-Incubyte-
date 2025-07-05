@@ -33,5 +33,15 @@ public class Test_Calculator {
     public void testCustomDelimiter() {
         assertEquals(3, calculator.Add("//;\n1;2"));
     }
-    
+
+    @Test
+    public void testNegativeNumberThrowsException() {
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.Add("1,-2,-5");
+        });
+        assertTrue(ex.getMessage().contains("-2"));
+        assertTrue(ex.getMessage().contains("-5"));
+        System.out.println(ex.getMessage());
+    }
+
 }
