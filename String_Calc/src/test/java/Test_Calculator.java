@@ -44,4 +44,10 @@ public class Test_Calculator {
         System.out.println(ex.getMessage());
     }
 
+    @Test
+    public void testNumbersGreaterThan1000AreIgnored() {
+        assertEquals(2, calculator.Add("2,1001"));
+    }
+
+
 }

@@ -21,18 +21,19 @@ public class Calculator {
 
         List<Integer> negatives = new ArrayList<>();
         for (String num : numbers) {
-            int n = Integer.parseInt(num.trim());
-            if (n < 0) negatives.add(n);
-            else sum += n;
+            if (!num.trim().isEmpty()) {
+                int n = Integer.parseInt(num.trim());
+                if (n < 0) {
+                    negatives.add(n);
+                } else if (n <= 1000) {
+                    sum += n;
+                }
+            }
         }
         if (!negatives.isEmpty()) {
             throw new IllegalArgumentException("negatives not allowed: " + negatives);
         }
 
-
-        for (String num : numbers) {
-            sum += Integer.parseInt(num.trim());
-        }
         return sum;
     }
 
